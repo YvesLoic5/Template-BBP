@@ -1,0 +1,14 @@
+# Findings Tracker — [Program Name]
+
+| # | Date | Asset | Type | Severity | Status | Bounty | Notes |
+|---|------|-------|------|----------|--------|--------|-------|
+| 1 | YYYY-MM-DD | target.com | XSS Reflected | Medium | FOUND | - | |
+
+## Status Legend
+- `FOUND` - Vulnérabilité identifiée, à confirmer
+- `CONFIRMED` - PoC fonctionnel
+- `REPORTED` - Soumis sur HackerOne
+- `TRIAGED` - Accepté par le programme
+- `RESOLVED` - Corrigé + bounty reçu
+- `DUPE` - Déjà reporté
+- `N/A` - Hors scope / invalide

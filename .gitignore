@@ -1,0 +1,44 @@
+# === Résultats de recon (données cibles — ne pas publier) ===
+recon/subdomains/all_subs_raw.txt
+recon/subdomains/live_hosts.txt
+recon/subdomains/live_urls.txt
+recon/subdomains/takeover_results.txt
+recon/subdomains/subfinder_*.txt
+recon/urls/
+recon/screenshots/
+
+# === Résultats de scan (vulnérabilités — ne pas publier) ===
+scan/nuclei/critical_high.txt
+scan/nuclei/medium_priority.txt
+scan/nuclei/cors_detail.txt
+scan/nuclei/cors.txt
+scan/nuclei/exposures_misconfigs.txt
+scan/dirsearch/
+scan/secrets/grep_secrets.txt
+scan/secrets/secretfinder_*.txt
+scan/secrets/js_downloaded/
+
+# === Résultats d'exploitation ===
+exploit/sqli/sqlmap_output/
+exploit/sqli/sqlmap_run.log
+exploit/ssrf/ssrf_*.log
+exploit/xss/ffuf_xss_results.txt
+exploit/xss/reflection_check.txt
+exploit/idor/idor_candidates.txt
+
+# === Rapports (findings privés) ===
+loot/findings/findings_tracker.md
+loot/reports/*.md
+!loot/reports/REPORT_TEMPLATE.md
+
+# === Config spécifique à la cible ===
+config/all_scope.txt
+config/priority_targets.txt
+setup.env
+
+# === Logs ===
+run_all.log
+*.log
+
+# === HTML policy files ===
+*.html
