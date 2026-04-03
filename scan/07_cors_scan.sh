@@ -40,13 +40,15 @@ while IFS= read -r url; do
         ACAO=$(echo "$RESPONSE" | grep -i "access-control-allow-origin" | tr -d '\r')
         ACAC=$(echo "$RESPONSE" | grep -i "access-control-allow-credentials" | tr -d '\r')
 
-        if echo "$ACAO" | grep -qi "$origin\|null\|\*"; then
+        ACAO_VALUE=$(echo "$ACAO" | grep -i "access-control-allow-origin" | sed 's/.*access-control-allow-origin:\s*//i' | tr -d '\r\n ')
+
+        if [ "$ACAO_VALUE" = "$origin" ] || [ "$ACAO_VALUE" = "null" -a "$origin" = "null" ] || [ "$ACAO_VALUE" = "*" ]; then
             if echo "$ACAC" | grep -qi "true"; then
-                echo "[CRITICAL] CORS + Credentials: $url | Origin: $origin | $ACAO | $ACAC" | tee -a "$OUT"
-            elif echo "$ACAO" | grep -q "\*"; then
-                echo "[LOW] CORS wildcard (*): $url | Origin: $origin | $ACAO" | tee -a "$OUT"
+                echo "[CRITICAL] CORS + Credentials: $url | Origin: $origin | ACAO: $ACAO_VALUE | ACAC: true" | tee -a "$OUT"
+            elif [ "$ACAO_VALUE" = "*" ]; then
+                echo "[LOW] CORS wildcard (*): $url | Origin: $origin | ACAO: $ACAO_VALUE" | tee -a "$OUT"
             else
-                echo "[MEDIUM] CORS reflected: $url | Origin: $origin | $ACAO" | tee -a "$OUT"
+                echo "[MEDIUM] CORS reflected: $url | Origin: $origin | ACAO: $ACAO_VALUE" | tee -a "$OUT"
             fi
         fi
     done
